@@ -1,5 +1,8 @@
 <?php
 
+namespace App\Http\Controllers\Api;
+
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Direccion;
@@ -14,6 +17,7 @@ class DireccionesController extends Controller
             'direcciones' => $direcciones,
         ]);
     }
+
     public function store(Request $request)
     {
         $request->validate([
@@ -25,7 +29,7 @@ class DireccionesController extends Controller
         ]);
 
         $direccion = Direccion::create([
-            'id_usuario' => Auth::id(), 
+            'id_usuario' => Auth::id(),
             'ciudad' => $request->ciudad,
             'estado' => $request->estado,
             'numero_casa' => $request->numero_casa,
@@ -38,6 +42,7 @@ class DireccionesController extends Controller
             'direccion' => $direccion,
         ]);
     }
+
     public function destroy($id)
     {
         $direccion = Direccion::where('id', $id)
@@ -57,4 +62,3 @@ class DireccionesController extends Controller
         ]);
     }
 }
-
