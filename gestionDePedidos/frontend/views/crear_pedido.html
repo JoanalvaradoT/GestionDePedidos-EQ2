@@ -1,36 +1,26 @@
 <!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Pedido</title>
-
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <script src="../../backend/auth.js"></script>
-    <script>
-      verificarAutenticacion();
-  </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
       body {
         background-color: #ffffff;
         color: #333;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       }
       .form-container {
-        margin-top: 50px;
+        margin-top: 80px;
         padding: 40px 30px;
-        background-color: white;
+        background: white;
         border-radius: 15px;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         max-width: 700px;
         width: 100%;
       }
-      .form-header {
-        text-align: center;
-        margin-bottom: 30px;
+      .form-container h1 {
         font-weight: bold;
         color: #4364f7;
       }
@@ -57,185 +47,224 @@
       .btn-secondary:hover {
         background-color: #c1c3d2;
       }
-      .navbar-dark .navbar-brand {
-        font-weight: bold;
-      }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="../../index.html">Gestión de Pedidos</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#menuNavegacion"
-          aria-controls="menuNavegacion"
-          aria-expanded="false"
-          aria-label="Alternar navegación"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="menuNavegacion">
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="menuPedidos"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Pedidos
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="menuPedidos">
-                <li><a class="dropdown-item" href="pedidos.html">Consultar</a></li>
-                <li><a class="dropdown-item" href="crear_pedido.html">Crear</a></li>
-                <li><a class="dropdown-item" href="editar_pedido.html">Editar</a></li>
-                <li><a class="dropdown-item" href="eliminar_pedido.html">Eliminar</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="menuProductos"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Productos
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="menuProductos">
-                <li><a class="dropdown-item" href="productos.html">Consultar</a></li>
-                <li><a class="dropdown-item" href="crear_producto.html">Crear</a></li>
-                <li><a class="dropdown-item" href="editar_producto.html">Editar</a></li>
-                <li><a class="dropdown-item" href="eliminar_producto.html">Eliminar</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="menuClientes"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Clientes
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="menuClientes">
-                <li><a class="dropdown-item" href="clientes.html">Consultar</a></li>
-                <li><a class="dropdown-item" href="registrarse.html">Crear</a></li>
-                <li><a class="dropdown-item" href="editar_cliente.html">Editar</a></li>
-                <li><a class="dropdown-item" href="eliminar_cliente.html">Eliminar</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="iniciar_sesion.html" id="iniciarSesionLink">Iniciar Sesión</a>            </li>
-          </ul>
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../../index.html">Gestión de Pedidos</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menuNavegacion"
+            aria-controls="menuNavegacion"
+            aria-expanded="false"
+            aria-label="Alternar navegación"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="menuNavegacion">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="menuPedidos"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Pedidos
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="menuPedidos">
+                  <li>
+                    <a class="dropdown-item" href="pedidos.html">Consultar</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="crear_pedido.html">Crear</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="editar_pedido.html">Editar</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="eliminar_pedido.html"
+                      >Eliminar</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="menuProductos"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Productos
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="menuProductos">
+                  <li>
+                    <a class="dropdown-item" href="productos.html">Consultar</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="crear_producto.html">Crear</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="editar_producto.html"
+                      >Editar</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="eliminar_producto.html"
+                      >Eliminar</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="menuClientes"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Clientes
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="menuClientes">
+                  <li>
+                    <a class="dropdown-item" href="clientes.html">Consultar</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="registrarse.html">Crear</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="editar_cliente.html">Editar</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="eliminar_cliente.html"
+                      >Eliminar</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+  
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="iniciar_sesion.html" id="iniciarSesionLink">Iniciar Sesión</a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
-
-    <!-- Formulario -->
-    <div class="container d-flex justify-content-center align-items-center">
-      <div class="form-container">
-        <h3 class="form-header">Crear Nuevo Pedido</h3>
-        <form id="crearPedidoForm">
-          <div class="mb-3">
-            <label for="producto" class="form-label">Producto</label>
-            <select class="form-select" id="producto" name="producto" required>
-              <option value="">Selecciona un producto</option>
-            </select>
-          </div>
-          <div class="mb-3">
-            <label for="cantidad" class="form-label">Cantidad</label>
-            <input
-              type="number"
-              class="form-control"
-              id="cantidad"
-              name="cantidad"
-              placeholder="Escribe la cantidad"
-              min="1"
-              required
-            />
-          </div>
-          <div class="text-center">
-            <button type="submit" class="btn btn-primary btn-lg w-100 mb-3">Crear Pedido</button>
-            <button type="reset" class="btn btn-secondary btn-lg w-100">Cancelar</button>
-          </div>
-        </form>
-      </div>
+      </nav>
+    <div class="container d-flex justify-content-center">
+        <div class="form-container">
+            <h1 class="text-center">Crear Nuevo Pedido</h1>
+            <form id="pedidoForm" class="mt-4">
+                <div class="mb-3">
+                    <label for="Producto" class="form-label">Producto</label>
+                    <input type="text" id="Producto" class="form-control" placeholder="Nombre del producto" required>
+                </div>
+                <div class="mb-3">
+                    <label for="cantidad_producto" class="form-label">Cantidad</label>
+                    <input type="number" id="cantidad_producto" class="form-control" placeholder="Cantidad del producto" required>
+                </div>
+                <div class="mb-3">
+                    <label for="direccion" class="form-label">Dirección</label>
+                    <input type="text" id="direccion" class="form-control" placeholder="Dirección de entrega" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Crear Pedido</button>
+            </form>
+            <div id="message" class="mt-4"></div>
+        </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-      document.addEventListener("DOMContentLoaded", async function () {
-        const productoSelect = document.getElementById("producto");
-    
-        try {
-          const response = await fetch("http://localhost:8000/api/productos");
-          const data = await response.json();
-    
-          if (data.status === 200) {
-            data.productos.forEach((producto) => {
-              const option = document.createElement("option");
-              option.value = producto.id_producto;
-              option.textContent = producto.nombre;
-              productoSelect.appendChild(option);
-            });
-          } else {
-            alert("Error al cargar los productos.");
-          }
-        } catch (error) {
-          console.error("Error al obtener productos:", error);
-          alert("Hubo un problema al cargar los productos.");
-        }
-      });
-    </script>
-    <script>
-      document.getElementById("crearPedidoForm").addEventListener("submit", async function (event) {
+      document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('pedidoForm').addEventListener('submit', async function (event) {
         event.preventDefault();
-    
-        const producto = document.getElementById("producto").value;
-        const cantidad = parseInt(document.getElementById("cantidad").value, 10);
-    
-        if (!producto || cantidad < 1) {
-          alert("Por favor, selecciona un producto y asegúrate de que la cantidad sea válida (mayor a 0).");
-          return;
+        console.log("Formulario enviado");
+        const producto = document.getElementById('Producto').value;
+        const cantidadProducto = document.getElementById('cantidad_producto').value;
+        const direccion = document.getElementById('direccion').value;
+        console.log({ producto, cantidadProducto, direccion });
+
+        if (!producto || !cantidadProducto || !direccion) {
+            console.error("Campos vacíos detectados");
+            alert("Por favor, completa todos los campos antes de enviar.");
+            return;
         }
-    
+
         try {
-          const response = await fetch("http://localhost:8000/api/pedidos", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              id: 1,
-              id_producto: producto,
-              cantidad: cantidad,
-              progreso: "Pendiente",
-              Total: "999.99", 
-            }),
-          });
-          const data = await response.json();
-  
-          if (response.ok) {
-            alert("Pedido creado correctamente.");
-          } else {
-            alert(`Error al crear el pedido: ${data.message}`);
-          }
+            const response = await fetch('http://localhost:8000/api/pedidos', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    Producto: producto,
+                    cantidad_producto: cantidadProducto,
+                    direccion: direccion,
+                }),
+            });
+
+            console.log("Respuesta recibida:", response);
+
+            const result = await response.json();
+
+            const messageDiv = document.getElementById('message');
+            if (response.ok) {
+                console.log("Pedido creado con éxito:", result);
+                messageDiv.innerHTML = `<div class="alert alert-success">${result.message}</div>`;
+                document.getElementById('pedidoForm').reset();
+            } else {
+                console.error("Error en la creación del pedido:", result);
+                messageDiv.innerHTML = `<div class="alert alert-danger">${result.message || 'Error al crear el pedido.'}</div>`;
+            }
         } catch (error) {
-          console.error("Error al crear pedido:", error);
-          alert("Hubo un problema al crear el pedido.");
+            console.error("Error de conexión:", error);
+            document.getElementById('message').innerHTML = `<div class="alert alert-danger">Error de conexión: ${error.message}</div>`;
+        }
+    });
+});
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const usuarioData = localStorage.getItem("usuario");
+
+        if (usuarioData) {
+          const usuario = JSON.parse(usuarioData); 
+          const navbar = document.querySelector(".navbar-nav");
+
+          const usuarioMenu = document.createElement("li");
+          usuarioMenu.classList.add("nav-item", "dropdown");
+          usuarioMenu.innerHTML = `
+            <a class="nav-link dropdown-toggle" href="#" id="menuUsuario" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              ${usuario.name}
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="menuUsuario">
+              <li><a class="dropdown-item" href="#" id="cerrarSesion">Cerrar Sesión</a></li>
+            </ul>
+          `;
+
+          const iniciarSesionLink = document.getElementById("iniciarSesionLink");
+          if (iniciarSesionLink) {
+            iniciarSesionLink.parentElement.replaceWith(usuarioMenu);
+          }
+
+          document.getElementById("cerrarSesion").addEventListener("click", function () {
+            localStorage.removeItem("usuario"); 
+            alert("Has cerrado sesión.");
+            window.location.href = "../../index.html"; 
+          });
         }
       });
-    </script>
-  </body>
+  </script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

@@ -67,7 +67,7 @@ class ProductosController extends Controller
 
         return response()->json([
             'message' => 'Producto encontrado',
-            'producto' => $producto,
+            'producto' => $producto->toArray() + ['imagen_url' => $producto->imagen_url],
             'status' => 200,
         ], 200);
     }
@@ -75,14 +75,14 @@ class ProductosController extends Controller
     public function update(Request $request, $id)
     {
         $producto = Producto::find($id);
-    
+
         if (!$producto) {
             return response()->json([
                 'message' => 'Producto no encontrado',
                 'status' => 404,
             ], 404);
         }
-    
+
         $validator = Validator::make($request->all(), [
             'nombre' => 'sometimes|required|max:255',
             'precio' => 'sometimes|required|numeric',
@@ -90,7 +90,7 @@ class ProductosController extends Controller
             'cantidad_disponible' => 'sometimes|required|integer',
             'imagen' => 'nullable|image|max:2048',
         ]);
-    
+
         if ($validator->fails()) {
             return response()->json([
                 'message' => 'Error en la validación de los datos',
@@ -98,22 +98,21 @@ class ProductosController extends Controller
                 'status' => 400,
             ], 400);
         }
-    
+
         if ($request->hasFile('imagen')) {
             $rutaImagen = $request->file('imagen')->store('productos', 'public');
             $producto->imagen = $rutaImagen;
         }
-    
+
         $producto->fill($request->except('imagen'));
         $producto->save();
-    
+
         return response()->json([
             'message' => 'Producto actualizado exitosamente',
-            'producto' => $producto,
+            'producto' => $producto->toArray() + ['imagen_url' => $producto->imagen_url],
             'status' => 200,
         ], 200);
     }
-    
 
     public function destroy($id)
     {

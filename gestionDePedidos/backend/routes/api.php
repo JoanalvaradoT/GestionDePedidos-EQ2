@@ -6,7 +6,6 @@ use App\Http\Controllers\Api\UsuariosController;
 use App\Http\Controllers\Api\ProductosController;
 use App\Http\Controllers\Api\DireccionesController;
 use App\Http\Controllers\Api\PedidosController;
-use App\Http\Controllers\Api\DetallePedidosController;
 use App\Http\Controllers\Api\AuthController;
 
 
@@ -29,24 +28,15 @@ Route::put('/productos/{id}', [ProductosController::class, 'update']);
 Route::delete('/productos/{id}', [ProductosController::class, 'destroy']);
 
 // Rutas para direcciones
-Route::middleware('auth')->group(function () {
-    Route::get('/direcciones', [DireccionesController::class, 'index']); 
-    Route::post('/direcciones', [DireccionesController::class, 'store']); 
-    Route::delete('/direcciones/{id}', [DireccionesController::class, 'destroy']);
+
+Route::get('/direcciones', [DireccionesController::class, 'index']); 
+Route::post('/direcciones', [DireccionesController::class, 'store']); 
+Route::delete('/direcciones/{id}', [DireccionesController::class, 'destroy']);
 
 // Rutas para pedidos
 Route::get('/pedidos', [PedidosController::class, 'index']); 
 Route::get('/pedidos/{id}', [PedidosController::class, 'show']); 
-Route::post('/pedidos', [PedidosController::class, 'store']);
+Route::post('/pedidos', [PedidosController::class, 'store']); 
 Route::put('/pedidos/{id}', [PedidosController::class, 'update']); 
-Route::delete('/pedidos/{id}', [PedidosController::class, 'destroy']);    
-
-// Rutas para detalle pedidos
-Route::get('/detalle_pedidos', [DetallePedidosController::class, 'index']); 
-Route::get('/detalle_pedidos/{id}', [DetallePedidosController::class, 'show']); 
-Route::post('/detalle_pedidos', [DetallePedidosController::class, 'store']); 
-Route::put('/detalle_pedidos/{id}', [DetallePedidosController::class, 'update']); 
-Route::delete('/detalle_pedidos/{id}', [DetallePedidosController::class, 'destroy']); 
-});
-
-
+Route::delete('/pedidos/{id}', [PedidosController::class, 'destroy']); 
+    

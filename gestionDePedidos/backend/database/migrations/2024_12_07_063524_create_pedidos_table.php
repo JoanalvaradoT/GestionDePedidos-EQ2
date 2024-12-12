@@ -13,15 +13,11 @@ return new class extends Migration
 {
     Schema::create('pedidos', function (Blueprint $table) {
         $table->id('id_pedido'); 
-        $table->unsignedBigInteger('id_usuario'); 
-        $table->string('progreso');
-        $table->string('Total');
+        $table->string('Producto');
+        $table->string('cantidad_producto');
+        $table->string('direccion');
         $table->timestamps();
-    
-        // Referencia corregida
-        $table->foreign('id_usuario')->references('id_usuario')->on('usuarios')->onDelete('cascade');
-    });
-    
+        });
 }
 
 

@@ -19,4 +19,9 @@ class Producto extends Model
         'cantidad_disponible',
         'imagen',
     ];
+
+    public function getImagenUrlAttribute()
+    {
+        return $this->imagen ? asset('storage/' . $this->imagen) : null;
+    }
 }
